@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-auth-88a28": {
+      "hosting": {
+        "Rim-banque": [
+          "angular-auth-88a28"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-auth-88a28"
+  }
+}
