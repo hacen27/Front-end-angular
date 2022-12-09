@@ -1,4 +1,4 @@
-# Bank-end-angular
+# Front-end-angular
 Projet académique angular spring boot et service web
 # RimBanque
 
