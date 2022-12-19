@@ -4,9 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { SingupComponent } from './singup/singup.component';
-import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { environment } from '../environments/environment';
@@ -18,26 +15,32 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFireAuth } from '@angular/fire/compat/auth';
+import { DashCardComponent } from './components/dash-card/dash-card.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DashBordContainerComponent } from './components/dash-bord-container/dash-bord-container.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    SingupComponent,
-    LoginComponent,
-    DashboardComponent
+    // HomeComponent,
+    // SingupComponent,
+    // LoginComponent,
+    DashboardComponent,
+    DashCardComponent,
+    NavbarComponent,
+    DashBordContainerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase), 
-    MatButtonModule ,
-    MatCardModule,
-    MatInputModule,
-    FormsModule, 
-    ReactiveFormsModule, 
+    // AngularFireModule.initializeApp(environment.firebase), 
+    // MatButtonModule ,
+    // MatCardModule,
+    // MatInputModule,
+    // FormsModule, 
+    // ReactiveFormsModule, 
    
     
     // AngularFireModule.initializeApp(environment.firebase)

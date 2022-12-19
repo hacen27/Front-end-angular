@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingupComponent } from './singup.component';
+import { DashCardComponent } from './dash-card.component';
 
-describe('SingupComponent', () => {
-  let component: SingupComponent;
-  let fixture: ComponentFixture<SingupComponent>;
+describe('DashCardComponent', () => {
+  let component: DashCardComponent;
+  let fixture: ComponentFixture<DashCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SingupComponent ]
+      declarations: [ DashCardComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SingupComponent);
+    fixture = TestBed.createComponent(DashCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
