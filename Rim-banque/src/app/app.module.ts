@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { AfterViewInit, NgModule, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,8 @@ import {AngularFireAuth } from '@angular/fire/compat/auth';
 import { DashCardComponent } from './components/dash-card/dash-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashBordContainerComponent } from './components/dash-bord-container/dash-bord-container.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { HistoryComponentComponent } from './history-component/history-component.component';
 
 
 @NgModule({
@@ -27,9 +29,11 @@ import { DashBordContainerComponent } from './components/dash-bord-container/das
     // SingupComponent,
     // LoginComponent,
     DashboardComponent,
-    DashCardComponent,
+    // DashCardComponent,
     NavbarComponent,
-    DashBordContainerComponent
+    DashBordContainerComponent,
+    SideBarComponent,
+    HistoryComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -50,4 +54,8 @@ import { DashBordContainerComponent } from './components/dash-bord-container/das
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  // @ViewChildren()
+ 
+}
