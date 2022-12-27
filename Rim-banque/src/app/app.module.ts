@@ -20,39 +20,33 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashBordContainerComponent } from './components/dash-bord-container/dash-bord-container.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { HistoryComponentComponent } from './history-component/history-component.component';
+import { AdminComponent } from './layouts/auth-layout/admin/admin.component';
+import { LoginComponent } from "./layouts/auth-layout/login/login.component";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    // HomeComponent,
-    // SingupComponent,
-    // LoginComponent,
-    DashboardComponent,
-    // DashCardComponent,
-    NavbarComponent,
-    DashBordContainerComponent,
-    SideBarComponent,
-    HistoryComponentComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    // AngularFireModule.initializeApp(environment.firebase), 
-    // MatButtonModule ,
-    // MatCardModule,
-    // MatInputModule,
-    // FormsModule, 
-    // ReactiveFormsModule, 
-   
-    
-    // AngularFireModule.initializeApp(environment.firebase)
-  ],
-  providers: [
-   
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        // HomeComponent,
+        // SingupComponent,
+        // LoginComponent,
+        DashboardComponent,
+        // DashCardComponent,
+        NavbarComponent,
+        DashBordContainerComponent,
+        SideBarComponent,
+        HistoryComponentComponent,
+        AdminComponent,
+        LoginComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        // LoginComponent
+    ]
 })
 export class AppModule {
 
