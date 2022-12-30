@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit{
           .subscribe(loginResp => {
             console.log(loginResp)
           if(loginResp.token) {
-            this.utilService.navigateTo('apropos');
+            this.utilService.navigateTo('Dashboard');
             this.localDbService.token = "Token " + loginResp.token;
           } else {
             console.log(" else ========== ")
