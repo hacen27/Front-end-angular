@@ -11,7 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 })
 export class AppComponent implements OnInit, AfterViewInit{
   ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
   title = 'Rim-banque';
   ngOnInit(): void {

@@ -7,8 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { environment } from '../environments/environment';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -22,6 +22,9 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { HistoryComponentComponent } from './history-component/history-component.component';
 import { AdminComponent } from './layouts/auth-layout/admin/admin.component';
 import { LoginComponent } from "./layouts/auth-layout/login/login.component";
+import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './services/login.service';
+import { RegisterComponent } from './layouts/auth-layout/register/register.component';
 
 
 @NgModule({
@@ -37,14 +40,19 @@ import { LoginComponent } from "./layouts/auth-layout/login/login.component";
         SideBarComponent,
         HistoryComponentComponent,
         AdminComponent,
-        LoginComponent
+        LoginComponent,
+        RegisterComponent
     ],
-    providers: [],
+    providers: [LoginService],
     bootstrap: [AppComponent],
     imports: [
+        FormsModule,
+        ReactiveFormsModule,
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        HttpClientModule,
+
         // LoginComponent
     ]
 })
