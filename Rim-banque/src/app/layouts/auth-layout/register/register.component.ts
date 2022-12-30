@@ -54,10 +54,10 @@ export class RegisterComponent implements OnInit ,AfterViewInit{
           firstName: this.form.value.firstName,
           lastName: this.form.value.lastName,
           username: this.form.value.username,
-          telephone: this.form.value.telephone,
+          phone: this.form.value.telephone,
           email: this.form.value.email,
           password: this.form.value.password,
-          confirmPassword: this.form.value.confirmPassword
+          // confirmPassword: this.form.value.confirmPassword
         }
         // reset alerts on submit
         // this.alertService.clear();
@@ -67,13 +67,15 @@ export class RegisterComponent implements OnInit ,AfterViewInit{
             return;
         }
 
+        console.log(userObj);
+
         this.loading = true;
         this.registerService.register(userObj)
         .subscribe(registerResp => {
           console.log(registerResp)
           // / registerResp.key maybee is not definitive 
           // try some thing link registerResp.status ==200 or some thing like that 
-        if(registerResp.key) {
+        if(registerResp.token) {
           this.utilService.navigateTo('login');
           // this.localDbService.token = "Token " + loginResp.key;
         } else {

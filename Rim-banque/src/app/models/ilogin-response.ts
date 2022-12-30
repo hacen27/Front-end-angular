@@ -1,4 +1,7 @@
 export interface ILoginResponse {
-    key: string
-  }
+   
+    username: string,
+    email: string,
+    token: string
+}
   

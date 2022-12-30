@@ -16,14 +16,14 @@
             <!--/login promo-->
 
             <!--login form-->
-            <div class="login-form" [formGroup]="formLogin">
+            <div class="login-form" >
                 <h4 class="text-uppercase text-purple text-center mb-5">Login</h4>
-                <form action="index.html" >
+                <form [formGroup]="formLogin" (submit)="loginIn()" >
                     <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" formControlName="username">
+                        <input type="text" class="form-control" id="username" placeholder="Enter Nom D'utilisateur" formControlName="username">
                     </div>
                     <div class="form-group mb-4">
-                        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Enter Password">
+                        <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter Password">
                     </div>
 
                     <div class="form-group clearfix">
@@ -38,7 +38,6 @@
                     </div>
                 </form>
             </div>
-            <!--/login form-->
 
             
         </div>

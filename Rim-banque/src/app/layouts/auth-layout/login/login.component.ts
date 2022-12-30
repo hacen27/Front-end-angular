@@ -30,21 +30,35 @@ export class LoginComponent implements OnInit{
   }
 
     loginIn() {
-      const loginObj: ILogin = {
-        username: this.formLogin.value.username,
-        password: this.formLogin.value.password
-      }
-  
-      this.loginService.logIn(loginObj)
-        .subscribe(loginResp => {
-          console.log(loginResp)
-        if(loginResp.key) {
-          this.utilService.navigateTo('apropos');
-          this.localDbService.token = "Token " + loginResp.key;
-        } else {
-          console.log(" else ========== ")
-          this.showError = true;
+      console.log("Start Login")
+      console.log(this.formLogin)
+      try{
+        const loginObj: ILogin = {
+          // username: "mohamed",
+          // password: "sidi1212"
+          username: this.formLogin.value.username,
+          password: this.formLogin.value.password
         }
-      });
+        console.log(loginObj);
+    
+        this.loginService.logIn(loginObj)
+          .subscribe(loginResp => {
+            console.log(loginResp)
+          if(loginResp.token) {
+            this.utilService.navigateTo('apropos');
+            this.localDbService.token = "Token " + loginResp.token;
+          } else {
+            console.log(" else ========== ")
+            this.showError = true;
+          }
+        });
+      }catch(Exception){
+        console.log(Exception);
+      }
+
+      console.log("End Login")
     }
+
+
+
 }

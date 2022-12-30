@@ -4,7 +4,7 @@
             <!--login form-->
             <div class="login-form">
                 <h4 class="text-uppercase text-purple text-center mb-5">Create Account</h4>
-                <form [formGroup]="form">
+                <form [formGroup]="form" (submit)="onSubmit()" >
                     <div class="form-group" >
                         <input type="text" formControlName="firstName" class="form-control" id="firstName" placeholder="Enter First Name">
                     </div>
@@ -15,7 +15,7 @@
                         <input type="text"formControlName="username" class="form-control" id="username" placeholder="Enter username">
                     </div>
                     <div class="form-group">
-                        <input type="phone" formControlName="telephone" class="form-control" id="phone" placeholder="Enter email">
+                        <input type="phone" formControlName="telephone" class="form-control" id="phone" placeholder="Enter Numero Téléphone">
                     </div>
                     <div class="form-group">
                         <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter email">
@@ -32,7 +32,8 @@
                             <input type="checkbox" class="custom-control-input" id="customControlInline">
                             <label class="custom-control-label" for="customControlInline" style="padding-left: 25px">I agree to the terms</label>
                         </span>
-                        <button type="submit" (click)="onSubmit()"  class="btn btn-purple float-right">SingUp</button>
+                        <!-- <button type="submit" (click)="onSubmit()"  class="btn btn-purple float-right">SingUp</button> -->
+                        <button type="submit"  class="btn btn-purple float-right">SingUp</button>
                     </div>
     
                     <div class="form-divider"></div>

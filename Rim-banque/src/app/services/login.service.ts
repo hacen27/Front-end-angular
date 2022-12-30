@@ -19,8 +19,9 @@ export class LoginService {
                 private localDbService: LocalDbService) { }
   
     logIn(loginObj: ILogin): Observable<ILoginResponse> {
-      return this.httpClient.post<ILoginResponse>("https://fstblogsi.up.railway.app/dj-rest-auth/login/", loginObj);
+      return this.httpClient.post<ILoginResponse>("http://127.0.0.1:9000/users/login", loginObj);
     }
+
   
     logOut() {
       this.localDbService.token = "";
