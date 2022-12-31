@@ -5,5 +5,6 @@ export interface IUserRegister {
     phone:number,
     email:string,
     password:string,
+    isAdmin:boolean
     // confirmPassword:string
 }

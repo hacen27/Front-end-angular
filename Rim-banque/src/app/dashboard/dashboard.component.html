@@ -5,7 +5,7 @@
         <div class="row">
             
             <div class="col-lg-7 col-12">
-                <h4 class="creative-state-title">Dashboard</h4>
+                <a (click)="afficheToken()"><h4 class="creative-state-title">Dashboard</h4></a>
             </div>
             <div class="col-lg-5  col-12 text-lg-right">
                 <div class="row short-states mb-lg-0 mb-4">
@@ -16,6 +16,9 @@
                     <div class="col-6">
                         <span class="pr-2">total visitors</span>
                         <span id="total_visitors"><canvas width="52" height="20" style="display: inline-block; width: 52px; height: 20px; vertical-align: top;"></canvas></span>
+                    </div>
+                    <div class="col-6">
+                        <a (click)="logout()"><h4 class="creative-state-title">Logout</h4></a>
                     </div>
                 </div>
             </div>
@@ -28,7 +31,7 @@
     </div>
     <div class="container-fluid">
 
-        <!--sales report & active user-->
+        <!-- sales report & active user-->
         <!-- <div class="row">
             <div class="col-xl-8 col-md-7">
                 <div class="card card-shadow mb-4">
@@ -100,7 +103,7 @@
                 </div>
             </div>
         </div> -->
-        <!--/sales report & active user-->
+        <!--/sales report & active user -->
 
         <!--sales monitor-->
         <!-- <div class="row">

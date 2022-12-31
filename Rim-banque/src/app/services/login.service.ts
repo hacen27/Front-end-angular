@@ -24,7 +24,11 @@ export class LoginService {
 
   
     logOut() {
+
       this.localDbService.token = "";
+      sessionStorage.removeItem('token');
+      sessionStorage.clear();
+
       this.utilService.navigateTo("login");
     }
   

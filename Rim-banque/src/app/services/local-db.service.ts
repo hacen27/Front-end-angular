@@ -23,5 +23,12 @@ export class LocalDbService {
   set token(value) {
     this._token = value;
   }
+  getToken() {
+    return sessionStorage.getItem('token');;
+  }
+
+  setToken(token: string) {
+    sessionStorage.setItem('token', token);
+  }
 
 }

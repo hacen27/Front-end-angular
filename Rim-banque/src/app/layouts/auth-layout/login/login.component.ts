@@ -29,6 +29,10 @@ export class LoginComponent implements OnInit{
     console.warn('EERRERERERERE');
   }
 
+  message(message : String) {
+    window.alert(message);
+  }
+
     loginIn() {
       console.log("Start Login")
       console.log(this.formLogin)
@@ -43,17 +47,27 @@ export class LoginComponent implements OnInit{
     
         this.loginService.logIn(loginObj)
           .subscribe(loginResp => {
-            console.log(loginResp)
-          if(loginResp.token) {
-            this.utilService.navigateTo('Dashboard');
-            this.localDbService.token = "Token " + loginResp.token;
+            console.log(loginResp);
+          if(loginResp.token != null) {
+            sessionStorage.setItem('token', loginResp.token);
+            
+            this.localDbService.token = loginResp.token;
+            console.log(this.localDbService.token);
+            this.utilService.navigateTo('');
+            console.log("last check : "+ this.localDbService.token);
           } else {
             console.log(" else ========== ")
+            console.log(sessionStorage.getItem("token"))
+            this.message("username ou le mot de pass n'est valide !");
             this.showError = true;
           }
+          
         });
+
+        
       }catch(Exception){
         console.log(Exception);
+        
       }
 
       console.log("End Login")

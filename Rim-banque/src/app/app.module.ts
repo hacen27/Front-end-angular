@@ -25,6 +25,9 @@ import { LoginComponent } from "./layouts/auth-layout/login/login.component";
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
 import { RegisterComponent } from './layouts/auth-layout/register/register.component';
+import { AlertsComponent } from './common-elements/alerts/alerts.component';
+import { ShowerrorComponent } from './common-elements/showerror/showerror.component';
+import { ShowSuccesComponent } from './common-elements/show-succes/show-succes.component';
 
 
 @NgModule({
@@ -41,7 +44,10 @@ import { RegisterComponent } from './layouts/auth-layout/register/register.compo
         HistoryComponentComponent,
         AdminComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        AlertsComponent,
+        ShowerrorComponent,
+        ShowSuccesComponent
     ],
     providers: [LoginService],
     bootstrap: [AppComponent],
