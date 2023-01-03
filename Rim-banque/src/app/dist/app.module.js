@@ -23,6 +23,10 @@ var login_component_1 = require("./layouts/auth-layout/login/login.component");
 var http_1 = require("@angular/common/http");
 var login_service_1 = require("./services/login.service");
 var register_component_1 = require("./layouts/auth-layout/register/register.component");
+var alerts_component_1 = require("./common-elements/alerts/alerts.component");
+var showerror_component_1 = require("./common-elements/showerror/showerror.component");
+var show_succes_component_1 = require("./common-elements/show-succes/show-succes.component");
+var member_card_module_1 = require("./shared/modules/member-card/member-card.module");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -41,7 +45,10 @@ var AppModule = /** @class */ (function () {
                 history_component_component_1.HistoryComponentComponent,
                 admin_component_1.AdminComponent,
                 login_component_1.LoginComponent,
-                register_component_1.RegisterComponent
+                register_component_1.RegisterComponent,
+                alerts_component_1.AlertsComponent,
+                showerror_component_1.ShowerrorComponent,
+                show_succes_component_1.ShowSuccesComponent,
             ],
             providers: [login_service_1.LoginService],
             bootstrap: [app_component_1.AppComponent],
@@ -52,6 +59,8 @@ var AppModule = /** @class */ (function () {
                 app_routing_module_1.AppRoutingModule,
                 animations_1.BrowserAnimationsModule,
                 http_1.HttpClientModule,
+                member_card_module_1.MemberCardModule
+                // LoginComponent
             ]
         })
     ], AppModule);

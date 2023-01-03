@@ -1,4 +1,4 @@
-import { Component, OnInit ,AfterViewInit} from '@angular/core';
+import { Component, OnInit ,AfterViewInit, ViewEncapsulation} from '@angular/core';
 import { LocalDbService } from '../services/local-db.service';
 import { LoginService } from '../services/login.service';
 import { DashboardService } from '../services/dashboard.service';
@@ -7,10 +7,13 @@ import { DashboardService } from '../services/dashboard.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  
+    encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit , AfterViewInit{
    comptes: Object=[];
+   messages = ['20', '200', '1900', '1500', '500'];
 
   constructor(
     private localDbService: LocalDbService,

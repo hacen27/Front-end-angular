@@ -1,8 +1,12 @@
     <!--creative states-->
-                <ng-container #messageContainer></ng-container>
+                <!-- <ng-container #messageContainer></ng-container> -->
             <!-- </div> -->
+            <div *ngFor="let message of messages">
+                <div class="col-lg-4 col-md-6 mb-4" >
+                    <app-member-card [counter]="message" ></app-member-card>               
+                </div>
 
-               
+            </div>
 
             <!-- <div class="col-lg-4 col-md-6 mb-4">
                 <app-dash-card  [counter]="50"  ></app-dash-card>
