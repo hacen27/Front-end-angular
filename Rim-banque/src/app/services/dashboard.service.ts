@@ -5,15 +5,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DashboardService {
 
-  readonly API_URL="http://localhost:9000/comptesmangement";
-  headers = new HttpHeaders({'Access-Control-Allow-Origin' : '*'})
+  readonly API_URL="http://localhost:9000";
+
 
   readonly ENDPOINT_COMPTES="/comptes";
   readonly ENDPOINT_SEARCH_COMPTES="/searchcompte/{codecompte}";
-  constructor(private httpClient:HttpClient) { 
+  constructor(private httpClient:HttpClient) {
 
   }
   getComptes(){
-    return this.httpClient.get(this.API_URL+this.ENDPOINT_COMPTES,{headers: this.headers})
+    return this.httpClient.get(this.API_URL+this.ENDPOINT_COMPTES)
   }
 }
