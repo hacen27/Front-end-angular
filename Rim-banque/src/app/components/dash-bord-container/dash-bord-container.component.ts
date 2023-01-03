@@ -36,7 +36,7 @@ export class DashBordContainerComponent implements OnInit,AfterViewInit{
   }
   ngAfterViewInit(): void {
 console.log('this.dashComponents',this.dashCardComponents.length)
-this.loadNewDashComponentToList();
+// this.loadNewDashComponentToList();
   }
 
 

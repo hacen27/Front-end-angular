@@ -28,6 +28,7 @@ import { RegisterComponent } from './layouts/auth-layout/register/register.compo
 import { AlertsComponent } from './common-elements/alerts/alerts.component';
 import { ShowerrorComponent } from './common-elements/showerror/showerror.component';
 import { ShowSuccesComponent } from './common-elements/show-succes/show-succes.component';
+import { MemberCardModule } from './shared/modules/member-card/member-card.module';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ShowSuccesComponent } from './common-elements/show-succes/show-succes.c
         RegisterComponent,
         AlertsComponent,
         ShowerrorComponent,
-        ShowSuccesComponent
+        ShowSuccesComponent,
+        
     ],
     providers: [LoginService],
     bootstrap: [AppComponent],
@@ -58,6 +60,7 @@ import { ShowSuccesComponent } from './common-elements/show-succes/show-succes.c
         AppRoutingModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        MemberCardModule
 
         // LoginComponent
     ]
