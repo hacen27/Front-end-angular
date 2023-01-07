@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit , AfterViewInit{
 
   ngOnInit(): void {
     console.log("Inisialiser dashboard!")
+    this.dashboardService.getCount().subscribe((data)=>console.log(data));
 
   }
 

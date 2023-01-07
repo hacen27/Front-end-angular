@@ -26,6 +26,7 @@ var DashboardComponent = /** @class */ (function () {
     };
     DashboardComponent.prototype.ngOnInit = function () {
         console.log("Inisialiser dashboard!");
+        this.dashboardService.getCount().subscribe(function (data) { return console.log(data); });
     };
     DashboardComponent.prototype.afficheToken = function () {
         console.log("la token : " + this.localDbService.token);

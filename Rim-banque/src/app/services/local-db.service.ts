@@ -12,7 +12,8 @@ export class LocalDbService {
       sessionStorage.getItem("token") &&
       sessionStorage.getItem("token") != "undefined"
     ) {
-      this.token = JSON.parse(sessionStorage.getItem("token")|| '{}');
+      this.token = sessionStorage.getItem("token")|| '{}';
+      console.log(this.token);
     }
   }
 
