@@ -6,16 +6,16 @@ import { LocalDbService } from './local-db.service';
 })
 export class DashboardService {
 
-  readonly API_URL="http://localhost:9000/comptesmangement";
-  headers = new HttpHeaders({'Access-Control-Allow-Origin' : '*','token':<string>this.localDbService.getToken()})
+  readonly API_URL="http://localhost:9000";
+
 
   readonly ENDPOINT_COMPTES="/comptes";
   readonly ENDPOINT_SEARCH_COMPTES="/searchcompte/{codecompte}";
-  constructor(private httpClient:HttpClient,private localDbService:LocalDbService) { 
+  constructor(private httpClient:HttpClient,private localDbService:LocalDbService) {
 
   }
   getComptes(){
-    return this.httpClient.get(this.API_URL+this.ENDPOINT_COMPTES,{headers: this.headers})
+    return this.httpClient.get(this.API_URL+this.ENDPOINT_COMPTES)
   }
 
   getCount(){

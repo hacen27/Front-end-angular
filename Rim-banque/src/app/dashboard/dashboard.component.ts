@@ -8,12 +8,14 @@ import { DashboardService } from '../services/dashboard.service';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  
+  providers:[DashboardService],
+
     encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit , AfterViewInit{
-   comptes: Object=[];
-   messages = ['20', '200', '1900', '1500', '500'];
+   comptes!: any[];
+   cmpt_total=0;
+   messages = ["20", '200', '1900', '1500', '500'];
 
   constructor(
     private localDbService: LocalDbService,
@@ -23,9 +25,13 @@ export class DashboardComponent implements OnInit , AfterViewInit{
   }
   ngAfterViewInit(): void {
     this.dashboardService.getComptes().subscribe((datas)=>{
-      this.comptes=datas;
+      this.comptes=datas as any;
+      this.cmpt_total=Object.keys(this.comptes).length;
       console.log(datas)
-      console.log("finsh *****************dashboard!")
+      console.log("finsh *****************dashboard!",this.comptes
+      )
+      console.log("nombres totals",this.cmpt_total
+      )
     })  }
 
   ngOnInit(): void {

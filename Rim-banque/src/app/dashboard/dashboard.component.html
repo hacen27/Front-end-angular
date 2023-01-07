@@ -3,7 +3,7 @@
 <div class="content-wrapper">
     <div class="creative-state-area">
         <div class="row">
-            
+
             <div class="col-lg-7 col-12">
                 <a (click)="afficheToken()"><h4 class="creative-state-title">Dashboard</h4></a>
             </div>
@@ -23,32 +23,42 @@
                 </div>
             </div>
             <!-- <div #messageContainer>
-                
+
 
             </div> -->
             <!-- <div> -->
-                <!-- <h1>liste comptes</h1> -->
-                <!-- <ul> -->
-                  <!--   <li *ngFor= "let compte of comptes">
-                        {{compte}}
-                    </li> -->
-                <!-- </ul> -->
-            <!-- <div> -->
-                <!-- <div > -->
-                    <div class="col-lg-4 col-md-6 mb-4 " *ngFor="let message of messages">
-                        <app-member-card [counter]="message"></app-member-card>
-                    </div>    
-                    <!-- <div class="col-lg-4 col-md-6 mb-4">
-                        <app-member-card [counter]="200"></app-member-card>
+                <h1>liste comptes</h1>
 
-                    </div> -->
-                 
-                        <!-- <app-member-card [counter]="message" *ngFor="let message of messages"></app-member-card>                -->
-    
-                <!-- </div> -->
-                  
-<!-- 
-                <app-dash-bord-container></app-dash-bord-container> -->
+                  <table>
+                    <thead>
+                        <tr>
+                            <th >ID</th>
+                            <th>Client</th>
+                            <th >date cree</th>
+                            <th >Status</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <tr *ngFor= "let compte of comptes">
+                          <td>{{compte.codeCompte
+                          }}</td>
+
+                        <td>client</td>
+                        <td>{{compte.dateCreation
+                        }}</td>
+                        <td>{{compte.statuesCompte
+                        }}
+                        </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                  <h2>total comptes {{cmpt_total}}</h2>
+                    <div class="col-lg-4 col-md-6 mb-4 " *ngFor="let message of messages">
+                      <app-member-card [counter]="message"></app-member-card>
+                  </div>
             <!-- </div> -->
         </div>
     </div>
