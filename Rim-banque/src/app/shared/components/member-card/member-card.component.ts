@@ -1,0 +1,20 @@
+import { Component, Input,OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-member-card',
+  templateUrl: './member-card.component.html',
+  styleUrls: ['./member-card.component.css']
+})
+export class MemberCardComponent implements OnInit{
+  @Input() counter: any;
+  @Input() message:any;
+  @Input() bg_class:any;
+  @Input() icon_class:any
+
+  constructor() {
+    // super();
+  }
+
+    ngOnInit() {}
+
+}
