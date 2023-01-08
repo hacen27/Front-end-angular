@@ -8,23 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.DashboardService = void 0;
 var core_1 = require("@angular/core");
-var http_1 = require("@angular/common/http");
 var DashboardService = /** @class */ (function () {
     function DashboardService(httpClient, localDbService) {
         this.httpClient = httpClient;
         this.localDbService = localDbService;
-        this.API_URL = "http://localhost:9000/comptesmangement";
-        this.headers = new http_1.HttpHeaders({ 'Access-Control-Allow-Origin': '*', 'token': this.localDbService.getToken() });
+        this.API_URL = "http://localhost:9000";
         this.ENDPOINT_COMPTES = "/comptes";
         this.ENDPOINT_SEARCH_COMPTES = "/searchcompte/{codecompte}";
     }
     DashboardService.prototype.getComptes = function () {
-        return this.httpClient.get(this.API_URL + this.ENDPOINT_COMPTES, { headers: this.headers });
+        return this.httpClient.get(this.API_URL + this.ENDPOINT_COMPTES);
     };
     DashboardService.prototype.getCount = function () {
-        return this.httpClient.get('http://127.0.0.1:9000/api/counter/', { 'headers': {
-                'token': this.localDbService.getToken()
-            } });
+        return this.httpClient.get('http://127.0.0.1:9000/api/counter/');
     };
     DashboardService = __decorate([
         core_1.Injectable({

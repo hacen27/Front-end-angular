@@ -19,8 +19,6 @@ export class DashboardService {
   }
 
   getCount(){
-    return this.httpClient.get('http://127.0.0.1:9000/api/counter/',{'headers':{
-      'token':<string>this.localDbService.getToken()
-    }})
+    return this.httpClient.get('http://127.0.0.1:9000/api/counter/')
   } 
 }

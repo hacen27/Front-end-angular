@@ -11,10 +11,14 @@ var core_1 = require("@angular/core");
 var LocalDbService = /** @class */ (function () {
     function LocalDbService() {
         this._token = "";
+        this.roles = [];
         if (sessionStorage.getItem("token") &&
             sessionStorage.getItem("token") != "undefined") {
             this.token = sessionStorage.getItem("token") || '{}';
+            this.roles = JSON.parse(sessionStorage.getItem('userRole') || '{}');
             console.log(this.token);
+            console.log(this.roles[0]['name']);
+            console.log('roles =======', this.roles);
         }
     }
     Object.defineProperty(LocalDbService.prototype, "token", {
@@ -33,6 +37,9 @@ var LocalDbService = /** @class */ (function () {
     };
     LocalDbService.prototype.setToken = function (token) {
         sessionStorage.setItem('token', token);
+    };
+    LocalDbService.prototype.getRole = function () {
+        return this.roles[0]['name'];
     };
     LocalDbService = __decorate([
         core_1.Injectable({

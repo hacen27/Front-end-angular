@@ -5,7 +5,9 @@
         <div class="row">
 
             <div class="col-lg-7 col-12">
-                <a (click)="afficheToken()"><h4 class="creative-state-title">Dashboard</h4></a>
+                <a (click)="afficheToken()">
+                    <h4 class="creative-state-title">Dashboard</h4>
+                </a>
             </div>
             <div class="col-lg-5  col-12 text-lg-right">
                 <div class="row short-states mb-lg-0 mb-4">
@@ -17,9 +19,11 @@
                         <span class="pr-2">total visitors</span>
                         <span id="total_visitors"><canvas width="52" height="20" style="display: inline-block; width: 52px; height: 20px; vertical-align: top;"></canvas></span>
                     </div>
-                    <div class="col-6">
-                        <a (click)="logout()"><h4 class="creative-state-title">Logout</h4></a>
-                    </div>
+                    <!-- <div class="col-6">
+                        <a (click)="logout()">
+                            <h4 class="creative-state-title">Logout</h4>
+                        </a>
+                    </div> -->
                 </div>
             </div>
             <!-- <div #messageContainer>
@@ -27,38 +31,37 @@
 
             </div> -->
             <!-- <div> -->
-                <h1>liste comptes</h1>
+            <!-- <h1>liste comptes</h1>
 
-                  <table>
-                    <thead>
-                        <tr>
-                            <th >ID</th>
-                            <th>Client</th>
-                            <th >date cree</th>
-                            <th >Status</th>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Client</th>
+                        <th>date cree</th>
+                        <th>Status</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <tr *ngFor="let compte of comptes">
+                            <td>{{compte.codeCompte }}
+                            </td>
+
+                            <td>client</td>
+                            <td>{{compte.dateCreation }}
+                            </td>
+                            <td>{{compte.statuesCompte }}
+                            </td>
 
                         </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <tr *ngFor= "let compte of comptes">
-                          <td>{{compte.codeCompte
-                          }}</td>
-
-                        <td>client</td>
-                        <td>{{compte.dateCreation
-                        }}</td>
-                        <td>{{compte.statuesCompte
-                        }}
-                        </td>
-
-                        </tr>
-                    </tbody>
-                </table>
-                  <h2>total comptes {{cmpt_total}}</h2>
-                    <div class="col-lg-4 col-md-6 mb-4 " *ngFor="let message of messages">
-                      <app-member-card [counter]="message"></app-member-card>
-                  </div>
+                </tbody>
+            </table>
+            <h2>total comptes {{cmpt_total}}</h2> -->
+            <div class="col-lg-4 col-md-6 mb-4 " *ngFor="let counter of counters;let i = index">
+                <app-member-card [counter]="counter" [message]="messages[i]"></app-member-card>
+            </div>
             <!-- </div> -->
         </div>
     </div>
@@ -603,7 +606,15 @@
                         <div class="tab-content" id="pills-tabContent2">
                             <div class="tab-pane fade show active" id="pills-weekly2" role="tabpanel" aria-labelledby="pills-today-tab">
                                 <div class="row">
-                                    <div class="col-12 col-xl-7 col-md-6 text-center"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                                    <div class="col-12 col-xl-7 col-md-6 text-center">
+                                        <div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                            <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                                <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                            </div>
+                                            <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                                <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                            </div>
+                                        </div>
                                         <canvas id="doughnut_chart" class="mb-4 chartjs-render-monitor" width="154" height="77" style="display: block; width: 154px; height: 77px;"></canvas>
                                         <small class="text-muted">Realtime data update instantly</small>
                                     </div>
@@ -896,4 +907,13 @@
         </div>
     </div>
 </div>
+<div class="text-center mt-3">
+    <a class="nav-link px-0" href="#">View all notification</a>
+</div>
+<!-- </div>
 
+</div>
+
+</div>
+</div>
+</div> -->

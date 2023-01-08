@@ -7,6 +7,7 @@ import { Component, Input,OnInit} from '@angular/core';
 })
 export class MemberCardComponent implements OnInit{
   @Input() counter: any;
+  @Input() message:any;
 
   constructor() {
     // super();

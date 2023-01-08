@@ -16,6 +16,9 @@ var MemberCardComponent = /** @class */ (function () {
     __decorate([
         core_1.Input()
     ], MemberCardComponent.prototype, "counter");
+    __decorate([
+        core_1.Input()
+    ], MemberCardComponent.prototype, "message");
     MemberCardComponent = __decorate([
         core_1.Component({
             selector: 'app-member-card',

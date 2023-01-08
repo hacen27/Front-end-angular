@@ -51,8 +51,11 @@ export class LoginComponent implements OnInit{
             console.log(loginResp);
           if(loginResp.token != null) {
             sessionStorage.setItem('token', loginResp.token);
-            
+          if(loginResp.roles){
+            sessionStorage.setItem('userRole',JSON.stringify(loginResp.roles))
+          }
             this.localDbService.token = loginResp.token;
+            // this.localDbService.
             console.log(this.localDbService.token);
             this.utilService.navigateTo('');
             console.log("last check : "+ this.localDbService.token);

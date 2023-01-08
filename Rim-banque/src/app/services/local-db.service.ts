@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class LocalDbService {
 
   private _token: string = "";
+  private roles =[];
 
   constructor() {
     if (
@@ -13,7 +14,10 @@ export class LocalDbService {
       sessionStorage.getItem("token") != "undefined"
     ) {
       this.token = sessionStorage.getItem("token")|| '{}';
+      this.roles = JSON.parse(sessionStorage.getItem('userRole')|| '{}')
       console.log(this.token);
+      console.log(this.roles[0]['name']);
+      console.log('roles =======',this.roles)
     }
   }
 
@@ -30,6 +34,9 @@ export class LocalDbService {
 
   setToken(token: string) {
     sessionStorage.setItem('token', token);
+  }
+  getRole(){
+    return this.roles[0]['name'];
   }
 
 }

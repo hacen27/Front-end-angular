@@ -28,24 +28,47 @@ var LoginComponent = /** @class */ (function () {
         });
         console.warn('EERRERERERERE');
     };
+    LoginComponent.prototype.message = function (message) {
+        window.alert(message);
+    };
     LoginComponent.prototype.loginIn = function () {
         var _this = this;
-        var loginObj = {
-            username: this.formLogin.value.username,
-            password: this.formLogin.value.password
-        };
-        this.loginService.logIn(loginObj)
-            .subscribe(function (loginResp) {
-            console.log(loginResp);
-            if (loginResp.key) {
-                _this.utilService.navigateTo('apropos');
-                _this.localDbService.token = "Token " + loginResp.key;
-            }
-            else {
-                console.log(" else ========== ");
-                _this.showError = true;
-            }
-        });
+        console.log("Start Login");
+        console.log(this.formLogin);
+        try {
+            var loginObj = {
+                // username: "mohamed",
+                // password: "sidi1212"
+                username: this.formLogin.value.username,
+                password: this.formLogin.value.password
+            };
+            console.log(loginObj);
+            this.loginService.logIn(loginObj)
+                .subscribe(function (loginResp) {
+                console.log(loginResp);
+                if (loginResp.token != null) {
+                    sessionStorage.setItem('token', loginResp.token);
+                    if (loginResp.roles) {
+                        sessionStorage.setItem('userRole', JSON.stringify(loginResp.roles));
+                    }
+                    _this.localDbService.token = loginResp.token;
+                    // this.localDbService.
+                    console.log(_this.localDbService.token);
+                    _this.utilService.navigateTo('');
+                    console.log("last check : " + _this.localDbService.token);
+                }
+                else {
+                    console.log(" else ========== ");
+                    console.log(sessionStorage.getItem("token"));
+                    _this.message("username ou le mot de pass n'est valide !");
+                    _this.showError = true;
+                }
+            });
+        }
+        catch (Exception) {
+            console.log(Exception);
+        }
+        console.log("End Login");
     };
     LoginComponent = __decorate([
         core_1.Component({
